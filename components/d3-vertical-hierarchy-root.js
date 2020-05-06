@@ -403,14 +403,14 @@ export function load() {
       let _this = this;
 
       this.calculateNodePositions();
-      console.log('nodeArray: ' + JSON.stringify(this.nodeArray, null, 2));
+      //console.log('nodeArray: ' + JSON.stringify(this.nodeArray, null, 2));
 
       this.nodeArray.forEach(function(record) {
         //console.log('selected record ' + JSON.stringify(record, null, 2));
         let node = _this.getComponentByName('d3-vertical-hierarchy-node', 'node-' + record.id, _this.rootElement);
-        console.log('node:');
-        console.log(node);
-        console.log('current position: ' + node.x + ',' + node.y);
+        //console.log('node:');
+        //console.log(node);
+        //console.log('current position: ' + node.x + ',' + node.y);
         if (node.visible && node.x === _this.positions[record.id].x && node.y === _this.positions[record.id].y) {
           // node already visible and at same position, so don't re-render
           return;
@@ -548,7 +548,7 @@ export function load() {
     }
 
     disconnectedCallback() {
-      console.log('*** d3-vertical-hierarchy component was removed!');
+      //console.log('*** d3-vertical-hierarchy component was removed!');
       this.removeOnReady();
       if (this.onUnload) this.onUnload();
     }

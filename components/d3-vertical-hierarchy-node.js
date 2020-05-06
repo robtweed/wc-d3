@@ -216,7 +216,7 @@ export function load() {
     }
 
     render() {
-      console.log('rendering ' + this.name);
+      //console.log('rendering ' + this.name);
       // set the starting point for the transition as that of the parent node
       let startX;
       let startY;
@@ -350,17 +350,17 @@ export function load() {
     }
 
     disconnectedCallback() {
-      console.log('d3-vertical-hierarchy-node component was removed!');
+      //console.log('d3-vertical-hierarchy-node component was removed!');
       // remove from parent's array of child nodes
       let node;
-      console.log('removing node ' + this.name + ' from parent');
+      //console.log('removing node ' + this.name + ' from parent');
       if (this.parent_node && this.parent_node.child_nodes) {
-        console.log('currently ' + this.parent_node.child_nodes.length + ' nodes in parent array');
+        //console.log('currently ' + this.parent_node.child_nodes.length + ' nodes in parent array');
         for (var i = 0; i < this.parent_node.child_nodes.length; i++) {
           node = this.parent_node.child_nodes[i];
-          console.log('found ' + node.name);
+          //console.log('found ' + node.name);
           if (node.name === this.name) {
-            console.log(node.name + ' removed from parent');
+            //console.log(node.name + ' removed from parent');
             this.parent_node.child_nodes.splice(i, 1);
             break;
           }
